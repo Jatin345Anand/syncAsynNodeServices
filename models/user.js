@@ -62,7 +62,7 @@ module.exports.comparePassword =  function(candidatePassword, hash, callback){
 // }
 module.exports.isSuperUser = function(){
   // username : regaskmvp@gmail.com
-  // Password : 123456
+   
   var query = {"username" : "regaskmvp@gmail.com"};
   User.findOne(query,async (err,data)=>{
     if(err){
@@ -72,15 +72,7 @@ module.exports.isSuperUser = function(){
       // console.log('SuperAdmin ',data);
       var dbObj = [{
         "username" : "super@regask.com",
-        "password" : "$2a$10$F93VEfZJzLnAUjiexgrgT.9SxGkB.eXYCvQYncmq70mHW68kGo8ra",
-        "firstname" : "RegAsk",
-        "lastname" : "Super Admin",
-        "phone" : "8800971471",
-        "location" : "india",
-        "ex" : "+91",
-        "role" : "superadmin",
-        "company" : "techferry",
-        "industry" : "IT"
+       
       }];
       let dbOutput = await User.insertMany(dbObj);
       // console.log('Db created ',dbOutput);
